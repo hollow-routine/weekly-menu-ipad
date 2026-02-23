@@ -28,6 +28,7 @@ Vid push till `main` byggs och pushas image till:
 
 ## iPad mini i kök (tips)
 
-- Kör Safari i helskärm / lägg till på hemskärmen.
+- Öppna sidan i Safari och välj **Add to Home Screen / Lägg till på hemskärmen**.
+- Starta sidan från hemskärmsikonen för att köra i web-app-läge (utan Safari UI/url-bar).
 - Lås skärmen i Guided Access om den ska stå permanent.
 - Om du hostar på LAN: använd fast lokal URL, t.ex. `http://menu.local`.
