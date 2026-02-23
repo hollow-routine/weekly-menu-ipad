@@ -4,17 +4,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Veckomeny</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <main class="container">
-      <header class="top">
-        <div class="logo" aria-label="Logga">🍽️ Matplanen</div>
-        <h1 id="weekTitle">Vecka</h1>
-        <p class="sub">Automatisk rotation varje söndag (4 veckor på repeat)</p>
+    <main class="page">
+      <header class="hero">
+        <div class="hero-mark">🍅 🥑 🍋</div>
+        <h1>VECKOMENY</h1>
+        <p id="weekTitle" class="week-title">Vecka A</p>
       </header>
 
-      <section class="menu-card" aria-live="polite">
+      <section class="menu-wrap" aria-live="polite">
         <ul id="menuList" class="menu-list"></ul>
       </section>
     </main>
