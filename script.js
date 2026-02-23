@@ -1,6 +1,6 @@
-var CYCLE_START_SUNDAY = new Date("2026-01-04T00:00:00");
+const CYCLE_START_SUNDAY = new Date("2026-01-04T00:00:00");
 
-var weeklyMenus = [
+const weeklyMenus = [
   {
     weekName: "Vecka A",
     days: [
@@ -52,47 +52,47 @@ var weeklyMenus = [
 ];
 
 function getSundayStart(date) {
-  var d = new Date(date);
-  var day = d.getDay();
+  const d = new Date(date);
+  const day = d.getDay();
   d.setHours(0, 0, 0, 0);
   d.setDate(d.getDate() - day);
   return d;
 }
 
 function getCurrentMenuIndex() {
-  var now = new Date();
-  var currentSunday = getSundayStart(now);
-  var startSunday = getSundayStart(CYCLE_START_SUNDAY);
+  const now = new Date();
+  const currentSunday = getSundayStart(now);
+  const startSunday = getSundayStart(CYCLE_START_SUNDAY);
 
-  var diffMs = currentSunday.getTime() - startSunday.getTime();
-  var weeksSinceStart = Math.floor(diffMs / (7 * 24 * 60 * 60 * 1000));
+  const diffMs = currentSunday.getTime() - startSunday.getTime();
+  const weeksSinceStart = Math.floor(diffMs / (7 * 24 * 60 * 60 * 1000));
   return ((weeksSinceStart % 4) + 4) % 4;
 }
 
 function renderMenu() {
-  var idx = getCurrentMenuIndex();
-  var menu = weeklyMenus[idx];
+  const idx = getCurrentMenuIndex();
+  const menu = weeklyMenus[idx];
 
-  var titleEl = document.getElementById("weekTitle");
+  const titleEl = document.getElementById("weekTitle");
   if (titleEl) {
-    titleEl.textContent = menu.weekName + " • Aktiv meny";
+    titleEl.textContent = `${menu.weekName} • Aktiv meny`;
   }
 
-  var list = document.getElementById("menuList");
+  const list = document.getElementById("menuList");
   if (!list) return;
 
   list.innerHTML = "";
 
-  for (var i = 0; i < menu.days.length; i++) {
-    var item = menu.days[i];
-    var li = document.createElement("li");
+  menu.days.forEach((item) => {
+    const li = document.createElement("li");
     li.className = "menu-item";
-    li.innerHTML =
-      '<span class="day">' + item.day + '</span>' +
-      '<span class="dish">' + item.dish + '</span>' +
-      '<span class="desc">' + item.desc + '</span>';
+    li.innerHTML = `
+      <span class="day">${item.day}</span>
+      <span class="dish">${item.dish}</span>
+      <span class="desc">${item.desc}</span>
+    `;
     list.appendChild(li);
-  }
+  });
 }
 
 renderMenu();

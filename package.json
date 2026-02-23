@@ -1,0 +1,14 @@
+{
+  "name": "weekly-menu-ipad",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build:js": "babel script.js --out-file dist/script.js",
+    "build": "npm run build:js"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.28.0",
+    "@babel/core": "^7.28.0",
+    "@babel/preset-env": "^7.28.0"
+  }
+}
