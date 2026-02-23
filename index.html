@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Veckomeny</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header class="top">
+        <div class="logo" aria-label="Logga">🍽️ Matplanen</div>
+        <h1 id="weekTitle">Vecka</h1>
+        <p class="sub">Automatisk rotation varje söndag (4 veckor på repeat)</p>
+      </header>
+
+      <section class="menu-card" aria-live="polite">
+        <ul id="menuList" class="menu-list"></ul>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
